@@ -60,7 +60,7 @@ router.post("/", validUser, upload.single('photo'), async (req, res) => {
 router.get("/all", validUser, async (req, res) => {
   // return photos
   try {
-    let cars = await Car.find({}).sort({
+    const cars = await Car.find({}).sort({
       created: -1
     });
     return res.send(cars);
